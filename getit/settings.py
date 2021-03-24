@@ -26,7 +26,7 @@ SECRET_KEY = '#+xlx6akm)83n5a9#36!#hcpgs#xv2te67aoezunn%y3bkzk$s'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['sheltered-lowlands-94927.herokuapp.com', 'localhost', '127.0.0.1']
+ALLOWED_HOSTS = ['cryptic-brushlands-13735.herokuapp.com', 'localhost', '127.0.0.1']
 
 
 # Application definition
