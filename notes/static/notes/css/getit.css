@@ -152,6 +152,16 @@ h3{
   transform: rotate(4deg);
 }
 
+.conteudo{
+  display: flex;
+  flex-direction: row;
+}
+
+.tags{
+  display: flex;
+  flex-direction: column;
+}
+
 
 /* Você pode usar o CSS comentado abaixo, se ajudar */
 /* Fonte: https://codepen.io/CrisWoler/pen/ogXBLj */

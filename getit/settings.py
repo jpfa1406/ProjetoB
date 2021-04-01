@@ -24,7 +24,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = '#+xlx6akm)83n5a9#36!#hcpgs#xv2te67aoezunn%y3bkzk$s'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['cryptic-brushlands-13735.herokuapp.com', 'localhost', '127.0.0.1']
 
@@ -83,6 +83,17 @@ DATABASES = {
         ssl_require=not DEBUG
     )
 }
+
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
+#         'NAME': 'getit',
+#         'USER': 'getituser',
+#         'PASSWORD': 'getitsenha',
+#         'HOST': 'localhost',
+#         'PORT': '5432',
+#     }
+# }
 
 
 # Password validation
