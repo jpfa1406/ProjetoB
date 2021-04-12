@@ -4,12 +4,23 @@ from .models import Note
 
 def index(request):
     if request.method == 'POST':
-        title = request.POST.get('titulo')
-        content = request.POST.get('detalhes')
-        tag = request.POST.get('tag')
-        note = Note(title = title, content = content, tag = tag)
-        note.save()
-        return redirect('index')
+        if request.POST.get('titulo') == '': # or request.POST.get('tag') != '':
+            return redirect('index')
+        elif request.POST.get('tag') == '':
+            title = request.POST.get('titulo')
+            content = request.POST.get('detalhes')
+            tag = 'Sem tag'
+            note = Note(title = title, content = content, tag = tag)
+            note.save()
+            return redirect('index')
+        else:
+            title = request.POST.get('titulo')
+            content = request.POST.get('detalhes')
+            tag = request.POST.get('tag')
+            note = Note(title = title, content = content, tag = tag)
+            note.save()
+            return redirect('index')
+
     else:
         all_notes = Note.objects.all()
         unique_tags = Note.objects.order_by().values('tag').distinct()
@@ -27,10 +38,20 @@ def delete(request, id):
 
 def edit(request, id):
     if request.method == 'POST':
-        title = request.POST.get('titulo')
-        content = request.POST.get('detalhes')
-        Note.objects.filter(id=id).update(title=title, content=content)
-        return redirect('index')
+        if request.POST.get('titulo') == '':
+            return redirect('index')
+        elif request.POST.get('tag') == '':
+            title = request.POST.get('titulo')
+            tag = 'Sem tag'
+            content = request.POST.get('detalhes')
+            Note.objects.filter(id=id).update(title=title, content=content, tag = tag)
+            return redirect('index')
+        else:
+            title = request.POST.get('titulo')
+            tag = request.POST.get('tag')
+            content = request.POST.get('detalhes')
+            Note.objects.filter(id=id).update(title=title, content=content, tag = tag)
+            return redirect('index')
     else:  
         edit_note = Note.objects.get(id=id)
         print(edit_note)

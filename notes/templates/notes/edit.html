@@ -12,15 +12,18 @@
 
 <main class="container">
 
-    <form method="post" class="card-container">
+    <form method="post" class="form-card">
         {% csrf_token %}
-        <div class="card">
             <p class="titulo">Título</p>
             <input class="card-title" placeholder={{ note.title }} name="titulo" />
+            <p class="titulo">Tag</p>
+            <input class="card-title" type="text" name="tag" placeholder="tag" />
             <p class="titulo">Detalhes</p>
-            <textarea placeholder={{note.content}} name="detalhes" class="card-content" contenteditable></textarea>
+            <textarea placeholder={{note.content}} name="detalhes" class="autoresize" contenteditable></textarea>
             <button class="btn" type="submit">editar</button>
-        </div>
+       
     </form>
 </main>
+
+<script type="text/javascript" src="{% static 'notes/js/getit.js' %}"></script>
 {% endblock %}

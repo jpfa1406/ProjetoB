@@ -10,6 +10,16 @@
     <span class="subtitle">Como o Post-it, mas com outro verbo</span>
 </div>
 
+<div class="sidebar">
+    <ul class="tags">
+        {% for tag in tags %}
+        <div class="tag">
+            <a href='/filter/{{tag}}' style="text-decoration:none;color: #000000;font-family: 'Permanent Marker', cursive;"> {{ tag }} </a>
+        </div>
+        {% endfor %}
+    </ul>
+</div>
+
 <main class="container">
     <form method="post" class="form-card">
         {% csrf_token %}
@@ -20,11 +30,7 @@
     </form>
 
     <div class="conteudo">
-        <ul class="tags">
-            {% for tag in tags %}
-            <a href='/filter/{{tag}}'> {{ tag }} </a>
-            {% endfor %}
-        </ul>
+
 
         <ul class="card-container">
             {% for note in notes %}
@@ -32,9 +38,9 @@
                 <div class="card-top">
                     <h3 class="card-title">{{ note.title }}</h3>
                     <div class="functions">
-                        <a href='/delete/{{note.id}}'><img src="{% static 'notes/img/x_icon.png' %}" style="height: 80%;
-                            "></a>
                         <a href='/edit/{{note.id}}'><img src="{% static 'notes/img/edit_icon.png' %}" style="height: 80%;
+                            "></a>
+                        <a href='/delete/{{note.id}}'><img src="{% static 'notes/img/x_icon.png' %}" style="height: 80%;
                             "></a>
                     </div>
                 </div>

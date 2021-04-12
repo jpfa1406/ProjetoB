@@ -27,4 +27,10 @@ document.addEventListener("DOMContentLoaded", function () {
       5
     )} card-rotation-${getRandomInt(1, 11)}`;
   }
+
+  let tags = document.getElementsByClassName("tag");
+  for (let i = 0; i < tags.length; i++) {
+    let tag = tags[i];
+    tag.className += ` tag-color-${getRandomInt(1,5)}`;
+  }
 });

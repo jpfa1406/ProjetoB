@@ -46,6 +46,36 @@ div.appbar {
   box-shadow: 0 4px 8px #2c2c2c;
 }
 
+.sidebar{
+  height: 100%;
+  width: 150px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  overflow-x: hidden;
+  padding-top: 200px;
+  margin-left: 10px;
+  text-decoration: none;
+}
+
+.tags{
+  padding-left: 0px;
+  text-decoration: none;
+  
+}
+
+.tag{
+  display: flex;
+  flex-direction: column;
+  padding: 5px;
+  border-radius: 20px;
+  margin: 5px;
+  text-align: center;
+  width: 90%;
+  
+}
+
 .logo{
   height: 40px;
   padding: 10px;
@@ -75,9 +105,15 @@ div.appbar {
   border: 0px;
 }
 
+.form-card-tag{
+  border-style: none;
+  margin-top: 7px;
+}
+
 .autoresize{
   border-style: none;
   resize: none;
+  margin-top: 7px;
 }
 
 .card-container{
@@ -132,6 +168,26 @@ h3{
   background-color: #abe9c1;
 }
 
+.tag-color-1{
+  background-color: #ead3a7;
+}
+
+.tag-color-2{
+  background-color: #9de0f5;
+}
+
+.tag-color-3{
+  background-color: #ef89ba;
+}
+
+.tag-color-4{
+  background-color: #fae890;
+}
+
+.tag-color-5{
+  background-color: #abe9c1;
+}
+
 .card-rotation-1{
   transform: rotate(2deg);
 }
@@ -155,12 +211,10 @@ h3{
 .conteudo{
   display: flex;
   flex-direction: row;
+  margin-left: 100px;
 }
 
-.tags{
-  display: flex;
-  flex-direction: column;
-}
+
 
 
 /* Você pode usar o CSS comentado abaixo, se ajudar */
